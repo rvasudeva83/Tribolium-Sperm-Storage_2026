@@ -59,7 +59,7 @@ rm(list=ls())
 
 
 setwd(XXXXXX)
-SM <- read.csv ("Male sperm depletion.F1-4_Fig 2B.csv", fileEncoding = "Latin1", check.names = F)
+SM <- read.csv ("Male Fertility_8.09.26_Fig 2B.csv", fileEncoding = "Latin1", check.names = F)
 
 str(SM)
 
