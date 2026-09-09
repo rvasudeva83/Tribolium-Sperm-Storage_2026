@@ -266,7 +266,7 @@ sum.TOc<-summarySE(sum.TO, measurevar="Offspring", groupvars=c("Treatment"))
 (284.5+285.3+157.9)/3
 (157.3+203.9+191.9)/3
 
-#write.csv(sum.TO, "SS_lifetime_Offs_for_Dave.csv")
+
 
 str(sum.TO)
 
@@ -319,11 +319,10 @@ SR.0<-SR %>% filter(!row_number() %in% c(8,12))
 ###### comparing spermathecal tubules numbers 3 and 7 ######
 SR.1 <- SR.0 %>% filter(Tubule_number == 3 | Tubule_number == 7)
 
-#write.csv(SR.1, "SS_Tubule_num_Offs_for_Dave.csv") # data frame to csv, write csv
 
 SR.1$Tubule_number<-as.factor(SR.1$Tubule_number)
 
-SR.1b<- summarySE (SR.1, measurevar = "Offspring", groupvars = c("Line","Treatment", "Tubule_number"))
+
 SR.1b2<- summarySE (SR.1b, measurevar = "Offspring", groupvars = c("Treatment","Tubule_number"))
 SR.1b2A<- summarySE (SR.0, measurevar = "Tubule_number", groupvars = c("Treatment"))
 SR.1b2B<- summarySE (SR.0, measurevar = "Tubule_number", groupvars = c("Treatment", "Line"))
@@ -332,8 +331,8 @@ SR.1d<- summarySE (SR.1, measurevar = "Offspring", groupvars = c("Line","Tubule_
 #SR.1d.s<- SR.1d %>% filter(!row_number() %in% c(4))
 SR.1e<- summarySE (SR.1, measurevar = "Offspring", groupvars = c("Line"))
 
-SR.1s<-summarySE (SR.1, measurevar = "Offspring", groupvars = c("Line","Tubule_number")) # to send to Dave
-SR.bs<-summarySE (SR, measurevar = "Body.Size", groupvars = c("Line"), na.rm=TRUE) # to send to Dave
+SR.1s<-summarySE (SR.1, measurevar = "Offspring", groupvars = c("Line","Tubule_number")) # 
+SR.bs<-summarySE (SR, measurevar = "Body.Size", groupvars = c("Line"), na.rm=TRUE) # 
 
 str(SR.1b)
 str(SR.1d)
